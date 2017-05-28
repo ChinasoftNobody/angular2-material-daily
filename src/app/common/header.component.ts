@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 /**
  * Created by Administrator on 2017/5/28.
  */
@@ -11,10 +12,17 @@ import {Component} from '@angular/core';
 export class HeaderComponent {
   links = [{
     title: 'Dashboard',
-    right: false
+    url: 'dashboard'
   },
     {
-      title: 'Tools',
-      right: true
+      title: 'Schedule',
+      url: 'schedule'
     }];
+
+  constructor(private router: Router) {
+  }
+
+  click(url) {
+    this.router.navigate(['/' + url]);
+  }
 }

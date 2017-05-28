@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 import {
   MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule, MdGridListModule, MdIconModule,
   MdInputModule,
-  MdSidenavModule, MdTabsModule
+  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -13,12 +13,14 @@ import 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AppRouterModule} from './app.router.module';
-import {TaskComponent} from './task/task.component';
+import {ScheduleComponent} from './schedule/schedule.component';
 import {HeaderComponent} from './common/header.component';
+import {AppLoadingComponent} from './common/app.loading.component';
+import {HttpService} from './common/http.service';
 
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, TaskComponent, HeaderComponent
+    AppComponent, DashboardComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +37,12 @@ import {HeaderComponent} from './common/header.component';
     MdCardModule,
     BrowserAnimationsModule,
     MdIconModule,
+    MdProgressSpinnerModule,
     AppRouterModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpService],
+  bootstrap: [AppComponent],
+  entryComponents: [AppLoadingComponent]
 })
 export class AppModule {
 }
