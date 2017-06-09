@@ -1,22 +1,30 @@
-<md-card class="example-card">
-  <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>Shiba Inu</md-card-title>
-    <md-card-subtitle>Dog Breed</md-card-subtitle>
-  </md-card-header>
-  <img md-card-image src="../../assets/imgs/shiba2.jpg">
-  <md-card-content>
-    <p>
-      Task
-    </p>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </md-card-content>
-  <md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
-  </md-card-actions>
-</md-card>
+<div class="schedule-container">
+  <md-grid-list cols="7" rowHeight="50px" gutterSize="5">
+    <md-grid-tile
+      *ngFor="let t of title"
+      [colspan]="1"
+      [rowspan]="1"
+      [style.background]="'lightblue'">
+      <h3>周{{t}}</h3>
+    </md-grid-tile>
+  </md-grid-list>
+  <md-grid-list cols="7" rowHeight="1:1" gutterSize="5">
+    <md-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+
+      <md-card class="example-card">
+        <md-card-header>
+          <md-card-title>{{tile.text}}</md-card-title>
+          <md-card-subtitle>Dog Breed</md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+          <p>{{tile.text}}</p>
+        </md-card-content>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+

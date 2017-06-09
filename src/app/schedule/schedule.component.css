@@ -1,5 +1,2 @@
-
-.example-header-image {
-  background-image: url('../../assets/imgs/shiba2.jpg');
-  background-size: cover;
-}
+.example-card {  width: 99%;height: 99%;  background-color: transparent;padding: 0}
+.schedule-container{ padding: 60px 40px}

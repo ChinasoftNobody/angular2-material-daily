@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpService} from "../common/http.service";
+import {HttpService} from '../common/http.service';
+import {ServerConfig} from '../config/server.config';
 
 @Component({
   moduleId: module.id,
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
   cards: any = [];
 
   ngOnInit(): void {
-    this.httpService.post('http://localhost:8080/daily/schedule/query', {
+    this.httpService.post(this.serverConfig.getUrl('dashboard'), {
       pageNumber: 1,
       pageSize: 10,
       userName: 'string'
@@ -23,6 +24,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: HttpService,
+              private serverConfig: ServerConfig) {
   }
 }

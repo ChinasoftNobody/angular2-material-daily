@@ -17,6 +17,7 @@ import {ScheduleComponent} from './schedule/schedule.component';
 import {HeaderComponent} from './common/header.component';
 import {AppLoadingComponent} from './common/app.loading.component';
 import {HttpService} from './common/http.service';
+import {ServerConfig} from "./config/server.config";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import {HttpService} from './common/http.service';
     MdProgressSpinnerModule,
     AppRouterModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, ServerConfig],
   bootstrap: [AppComponent],
   entryComponents: [AppLoadingComponent]
 })
