@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 import {
   MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule, MdGridListModule, MdIconModule,
   MdInputModule,
-  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule
+  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule, MdListModule, MdListDivider
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -17,7 +17,7 @@ import {ScheduleComponent} from './schedule/schedule.component';
 import {HeaderComponent} from './common/header.component';
 import {AppLoadingComponent} from './common/app.loading.component';
 import {HttpService} from './common/http.service';
-import {ServerConfig} from "./config/server.config";
+import {ServerConfig} from './config/server.config';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import {ServerConfig} from "./config/server.config";
     BrowserAnimationsModule,
     MdIconModule,
     MdProgressSpinnerModule,
+    MdListModule,
     AppRouterModule
   ],
   providers: [HttpService, ServerConfig],

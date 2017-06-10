@@ -25,6 +25,7 @@ export class HttpService {
       resolve(data.json().result);
     }, error => {
       console.error(error);
+      this.dialog.closeAll();
     });
   }
 }

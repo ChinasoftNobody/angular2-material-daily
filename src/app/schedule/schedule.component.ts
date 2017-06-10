@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from '../common/http.service';
-import {ServerConfig} from "../config/server.config";
-import {forEach} from "@angular/router/src/utils/collection";
+import {ServerConfig} from '../config/server.config';
 
 @Component({
   moduleId: module.id,
@@ -11,11 +10,11 @@ import {forEach} from "@angular/router/src/utils/collection";
   providers: []
 })
 export class ScheduleComponent implements OnInit {
-  tiles = [
-  ];
+  tiles = [];
   title: any = [
     '日', '一', '二', '三', '四', '五', '六'
   ];
+  scheduleList: any = {};
 
   ngOnInit(): void {
     this.http.post(this.server.getUrl('calendar'), {month: ''}, data => {
@@ -24,6 +23,9 @@ export class ScheduleComponent implements OnInit {
           text: item.day, cols: 1, rows: 1, color: 'lightblue'
         });
       });
+    });
+    this.http.post(this.server.getUrl('schedule_list'), {pageNumber: 1, pageSize: 10, userName: 'string'}, data => {
+      this.scheduleList = data;
     });
   }
 

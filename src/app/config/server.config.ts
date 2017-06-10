@@ -15,7 +15,11 @@ export const ServerInfo = {
       name: 'calendar',
       type: 'post',
       url: '/daily/schedule/calendar'
-    },
+    }, {
+      name: 'schedule_list',
+      type: 'post',
+      url: '/daily/schedule/query'
+    }
   ]
 };
 
