@@ -8,7 +8,7 @@ export const ServerInfo = {
   protocol: 'http',
   interfaces: [
     {
-      name: 'dashboard',
+      name: 'index',
       type: 'post',
       url: '/daily/schedule/query'
     }, {

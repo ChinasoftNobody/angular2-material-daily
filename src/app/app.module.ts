@@ -11,7 +11,7 @@ import {
 import {AppComponent} from './app.component';
 import 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {IndexComponent} from './index/index.component';
 import {AppRouterModule} from './app.router.module';
 import {ScheduleComponent} from './schedule/schedule.component';
 import {HeaderComponent} from './common/header.component';
@@ -21,7 +21,7 @@ import {ServerConfig} from './config/server.config';
 
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent
+    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent
   ],
   imports: [
     BrowserModule,

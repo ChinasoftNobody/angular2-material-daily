@@ -4,15 +4,19 @@ import {ServerConfig} from '../config/server.config';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class IndexComponent implements OnInit {
   cards: any = [];
 
+  cardOnClick(cardId: any) {
+    console.log(cardId);
+  }
+
   ngOnInit(): void {
-    this.httpService.post(this.serverConfig.getUrl('dashboard'), {
+    this.httpService.post(this.serverConfig.getUrl('index'), {
       pageNumber: 1,
       pageSize: 10,
       userName: 'string'

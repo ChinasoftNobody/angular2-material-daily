@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class HeaderComponent {
   links = [{
     title: 'Dashboard',
-    url: 'dashboard'
+    url: 'index'
   },
     {
       title: 'Schedule',
