@@ -18,22 +18,15 @@ import {HeaderComponent} from './common/header.component';
 import {AppLoadingComponent} from './common/app.loading.component';
 import {HttpService} from './common/http.service';
 import {ServerConfig} from './config/server.config';
+import {PaginationComponent} from "./common/pagination/pagenation.component";
 
 @NgModule({
   declarations: [
-    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent
+    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MdButtonModule,
-    MdSidenavModule,
-    MdInputModule,
-    MdDatepickerModule,
-    MdCheckboxModule,
-    MdGridListModule,
-    MdTabsModule,
+    BrowserModule, FormsModule, HttpModule, MdButtonModule, MdSidenavModule, MdInputModule, MdDatepickerModule, MdCheckboxModule,
+    MdGridListModule, MdTabsModule,
     MdDialogModule,
     MdCardModule,
     BrowserAnimationsModule,

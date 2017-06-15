@@ -1,0 +1,13 @@
+<div class="app-pagination">
+  <md-grid-list cols="7" rowHeight="30px" gutterSize="2px">
+    <md-grid-tile>
+      <md-card class="app-pagination-card"><md-icon>lt</md-icon></md-card>
+    </md-grid-tile>
+    <md-grid-tile *ngFor="let item of _pages">
+      <md-card class="app-pagination-card" (click) = onSelectPage(item)>{{item + 1}}</md-card>
+    </md-grid-tile>
+    <md-grid-tile>
+      <md-card class="app-pagination-card"><md-icon>gt</md-icon></md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

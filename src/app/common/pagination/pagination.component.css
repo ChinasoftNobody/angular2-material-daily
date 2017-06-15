@@ -1,0 +1,3 @@
+.app-pagination{ width: 210px;height: 30px;float: right;padding: 10px 0;}
+.app-pagination-card.mat-card{ color: #337ab7}
+.app-pagination-card:hover{background-color: cyan;cursor: pointer}

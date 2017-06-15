@@ -11,12 +11,13 @@
   <md-grid-list cols="2" rowHeight="7:5" gutterSize="15" class="app-card-list">
     <md-grid-tile *ngFor="let card of cards">
       <md-card class="example-card" (click)="cardOnClick(card.name)">
-        <img md-card-image class="app-index-img" src="../../assets/imgs/card1.png">
+        <img md-card-image class="app-index-img" src="../../assets/imgs/card2.png">
         <md-card-content>
           <a>{{card.name}}</a>
         </md-card-content>
       </md-card>
     </md-grid-tile>
   </md-grid-list>
+  <app-pagination [total]="pageInfo.total" [size]="pageInfo.pageSize" [number]="pageInfo.pageNumber" (onSelect)="cardPageSelect($event)"></app-pagination>
 </div>
 
