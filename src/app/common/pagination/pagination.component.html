@@ -1,13 +1,14 @@
-<div class="app-pagination">
-  <md-grid-list cols="7" rowHeight="30px" gutterSize="2px">
-    <md-grid-tile>
-      <md-card class="app-pagination-card"><md-icon>lt</md-icon></md-card>
+<div class="app-pagination" [ngStyle]="{width:(30*(_gridCols)+'px')}">
+  <md-grid-list [cols]="_gridCols" rowHeight="28px" gutterSize="0px">
+    <md-grid-tile class="app-container-item" (click)=onSelectPage(number-1)>
+      &laquo;
     </md-grid-tile>
-    <md-grid-tile *ngFor="let item of _pages">
-      <md-card class="app-pagination-card" (click) = onSelectPage(item)>{{item + 1}}</md-card>
+    <md-grid-tile *ngFor="let item of _pages;let idx=index" class="app-container-item" (click)=onSelectPage(item)
+                  [ngClass]="{'app-container-current-item': (idx === number)}">
+      {{item + 1}}
     </md-grid-tile>
-    <md-grid-tile>
-      <md-card class="app-pagination-card"><md-icon>gt</md-icon></md-card>
+    <md-grid-tile class="app-container-item" (click)=onSelectPage(number+1)>
+      &raquo;
     </md-grid-tile>
   </md-grid-list>
 </div>

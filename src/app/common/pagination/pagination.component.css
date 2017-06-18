@@ -1,3 +1,4 @@
-.app-pagination{ width: 210px;height: 30px;float: right;padding: 10px 0;}
-.app-pagination-card.mat-card{ color: #337ab7}
-.app-pagination-card:hover{background-color: cyan;cursor: pointer}
+.app-pagination{ height: 30px;float: right;margin: 10px 0;}
+.app-container-item{ color:#337ab7; border: 1px solid #ddd;background-color: #FFFFFF;}
+.app-container-item:hover{ background-color: #eee;cursor: pointer;}
+.app-container-current-item{ background-color: #00bcd4}
