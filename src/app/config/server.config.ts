@@ -10,7 +10,7 @@ export const ServerInfo = {
     {
       name: 'index',
       type: 'post',
-      url: '/daily/schedule/query'
+      url: '/daily/module/query'
     }, {
       name: 'calendar',
       type: 'post',

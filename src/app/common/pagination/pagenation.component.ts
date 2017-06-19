@@ -18,6 +18,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   _gridCols = 0;
   _morePositionPre = true;
   _morePositionShow = false;
+  _totalPage = 0;
 
   onSelectPage(pageNumber: number) {
     if (pageNumber < 0) {
@@ -45,6 +46,7 @@ export class PaginationComponent implements OnInit, OnChanges {
       }
     }
     const number = Math.ceil(this.total / this.size);
+    this._totalPage = number + 2;
     if (number > 10) {
       this._morePositionShow = true;
       if (this.number > number / 2) {
@@ -64,7 +66,7 @@ export class PaginationComponent implements OnInit, OnChanges {
         this._pages.push(i);
       }
     } else {
-      for (let i = 0; i < this._pageNumber; i++) {
+      for (let i = 0; i < this._totalPage - 2; i++) {
         this._pages.push(i);
       }
     }

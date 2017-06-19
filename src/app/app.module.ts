@@ -18,11 +18,12 @@ import {HeaderComponent} from './common/header.component';
 import {AppLoadingComponent} from './common/app.loading.component';
 import {HttpService} from './common/http.service';
 import {ServerConfig} from './config/server.config';
-import {PaginationComponent} from "./common/pagination/pagenation.component";
+import {PaginationComponent} from './common/pagination/pagenation.component';
+import {CopyrightComponent} from './common/copyright/copyright.component';
 
 @NgModule({
   declarations: [
-    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent
+    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent, CopyrightComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, MdButtonModule, MdSidenavModule, MdInputModule, MdDatepickerModule, MdCheckboxModule,
@@ -36,7 +37,7 @@ import {PaginationComponent} from "./common/pagination/pagenation.component";
     AppRouterModule
   ],
   providers: [HttpService, ServerConfig],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, CopyrightComponent],
   entryComponents: [AppLoadingComponent]
 })
 export class AppModule {

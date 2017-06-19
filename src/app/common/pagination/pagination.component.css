@@ -1,4 +1,4 @@
-.app-pagination{ height: 30px;float: right;margin: 10px 0;}
+.app-pagination{ height: 30px;float: right;margin: 10px 0;max-width: 100%;}
 .app-container-item{ color:#337ab7; border: 1px solid #ddd;background-color: #FFFFFF;}
 .app-container-item:hover{ background-color: #eee;cursor: pointer;}
 .app-container-current-item{ background-color: #00bcd4}

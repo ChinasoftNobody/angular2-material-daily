@@ -9,15 +9,15 @@
 </div>
 <div class="app-container">
   <md-grid-list cols="2" rowHeight="7:5" gutterSize="15" class="app-card-list">
-    <md-grid-tile *ngFor="let card of cards">
-      <md-card class="example-card" (click)="cardOnClick(card.name)">
-        <img md-card-image class="app-index-img" src="../../assets/imgs/card2.png">
+    <md-grid-tile>
+      <md-card class="example-card" (click)="cardOnClick('schedule')">
+        <img md-card-image class="app-index-img" src="../../assets/imgs/card3.png">
         <md-card-content>
-          <a>{{card.name}}</a>
+          <a>日程管理</a>
         </md-card-content>
       </md-card>
     </md-grid-tile>
   </md-grid-list>
-  <app-pagination [total]="pageInfo.total" [size]="pageInfo.pageSize" [number]="pageInfo.pageNumber" (onSelect)="cardPageSelect($event)"></app-pagination>
+  <!--<app-pagination [total]="pageInfo.total" [size]="pageInfo.pageSize" [number]="pageInfo.pageNumber" (onSelect)="cardPageSelect($event)"></app-pagination>-->
 </div>
 

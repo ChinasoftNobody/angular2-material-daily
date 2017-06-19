@@ -11,13 +11,9 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent {
   links = [{
-    title: 'Dashboard',
+    title: 'Home',
     url: 'index'
-  },
-    {
-      title: 'Schedule',
-      url: 'schedule'
-    }];
+  }];
 
   constructor(private router: Router) {
   }

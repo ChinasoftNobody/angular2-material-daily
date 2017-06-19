@@ -1,5 +1,5 @@
-<div class="app-pagination" [ngStyle]="{width:(30*(_gridCols)+'px')}">
-  <md-grid-list [cols]="_gridCols" rowHeight="28px" gutterSize="0px">
+<div class="app-pagination" [ngStyle]="{width:(30*(_totalPage)+'px')}">
+  <md-grid-list [cols]="_totalPage" rowHeight="28px" gutterSize="0px">
     <md-grid-tile class="app-container-item" (click)=onSelectPage(number-1)>
       &laquo;
     </md-grid-tile>
