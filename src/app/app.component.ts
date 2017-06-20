@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonService} from './common/common.service';
-import {MdDialog} from '@angular/material';
-import {LoginComponent} from './common/login/login.component';
 
 @Component({
   moduleId: module.id,
