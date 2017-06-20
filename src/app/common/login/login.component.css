@@ -1,0 +1,6 @@
+.app-login-container{ background-color: #FFFFFF;width: 100%; height: 100%;}
+.app-login-header{ width: 100%;height: 100px;}
+.app-login-content{ width: 100%;height: 500px;}
+.example-icon {  padding: 0 14px;  }
+.example-icon:hover {  cursor: pointer;}
+.example-spacer {  flex: 1 1 auto;  }

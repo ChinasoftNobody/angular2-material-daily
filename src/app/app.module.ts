@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 import {
   MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule, MdGridListModule, MdIconModule,
   MdInputModule,
-  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule, MdListModule, MdListDivider
+  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule, MdListModule, MdListDivider, MdToolbar, MdToolbarModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -20,10 +20,13 @@ import {HttpService} from './common/http.service';
 import {ServerConfig} from './config/server.config';
 import {PaginationComponent} from './common/pagination/pagenation.component';
 import {CopyrightComponent} from './common/copyright/copyright.component';
+import {LoginComponent} from './common/login/login.component';
+import {CommonService} from "./common/common.service";
 
 @NgModule({
   declarations: [
-    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent, CopyrightComponent
+    AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent, CopyrightComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, MdButtonModule, MdSidenavModule, MdInputModule, MdDatepickerModule, MdCheckboxModule,
@@ -34,11 +37,12 @@ import {CopyrightComponent} from './common/copyright/copyright.component';
     MdIconModule,
     MdProgressSpinnerModule,
     MdListModule,
-    AppRouterModule
+    AppRouterModule,
+    MdToolbarModule
   ],
-  providers: [HttpService, ServerConfig],
+  providers: [HttpService, ServerConfig, CommonService],
   bootstrap: [AppComponent, CopyrightComponent],
-  entryComponents: [AppLoadingComponent]
+  entryComponents: [AppLoadingComponent, LoginComponent]
 })
 export class AppModule {
 }

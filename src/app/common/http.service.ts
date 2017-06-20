@@ -2,12 +2,13 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {DialogRole, MdDialog} from '@angular/material';
 import {AppLoadingComponent} from './app.loading.component';
+import {CommonService} from "./common.service";
 /**
  * Created by Administrator on 2017/5/28.
  */
 @Injectable()
 export class HttpService {
-  constructor(private http: Http, public dialog: MdDialog) {
+  constructor(private http: Http, public dialog: MdDialog, private commonService: CommonService) {
   }
 
   private openLoadingDialog() {
@@ -19,13 +20,17 @@ export class HttpService {
   }
 
   post(url: string, body: any, resolve?: (value: any) => void) {
-    this.openLoadingDialog();
-    this.http.post(url, body).subscribe(data => {
-      this.dialog.closeAll();
-      resolve(data.json().result);
-    }, error => {
-      console.error(error);
-      this.dialog.closeAll();
-    });
+    if (!this.commonService.getUser()) {
+      this.commonService.init();
+    } else {
+      this.openLoadingDialog();
+      this.http.post(url, body).subscribe(data => {
+        this.dialog.closeAll();
+        resolve(data.json().result);
+      }, error => {
+        console.error(error);
+        this.dialog.closeAll();
+      });
+    }
   }
 }
