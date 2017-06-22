@@ -19,6 +19,10 @@ export const ServerInfo = {
       name: 'schedule_list',
       type: 'post',
       url: '/daily/schedule/query'
+    }, {
+      name: 'login',
+      type: 'post',
+      url: '/daily/user/login'
     }
   ]
 };

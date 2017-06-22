@@ -21,7 +21,7 @@ import {ServerConfig} from './config/server.config';
 import {PaginationComponent} from './common/pagination/pagenation.component';
 import {CopyrightComponent} from './common/copyright/copyright.component';
 import {LoginComponent} from './common/login/login.component';
-import {CommonService} from "./common/common.service";
+import {CommonService} from './common/common.service';
 
 @NgModule({
   declarations: [

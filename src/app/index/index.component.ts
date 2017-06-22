@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {CommonService} from "../common/common.service";
+import {CommonService} from '../common/common.service';
 
 @Component({
   moduleId: module.id,
@@ -9,6 +9,7 @@ import {CommonService} from "../common/common.service";
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  userName = 'Login Here';
 
   cardOnClick(routerKey: any) {
     this.router.navigate([routerKey]);
@@ -19,7 +20,7 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.commonService.userObservable.subscribe(user => this.userName = user.name);
   }
 
   constructor(private router: Router,

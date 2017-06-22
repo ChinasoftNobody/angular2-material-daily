@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-import {MdDialog} from '@angular/material';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import {ServerConfig} from '../../config/server.config';
+import {HttpService} from '../http.service';
 @Component({
   moduleId: module.id,
   selector: 'app-login',
@@ -10,17 +12,21 @@ export class LoginComponent {
   user: any = {
     name: '',
     password: ''
-  }
-  ;
+  };
 
   login() {
-    console.log(this.user);
+    this.http.post(this.serverConfig.getUrl('login'), this.user, value => this.dialogRef.close(value), error => {
+      this.dialogRef.close('failed');
+    });
   }
 
   closeDialog() {
-    this.dialog.closeAll();
+    this.dialogRef.close('close');
   }
 
-  constructor(private dialog: MdDialog) {
+  constructor(private dialog: MdDialog,
+              private http: HttpService,
+              private serverConfig: ServerConfig,
+              public dialogRef: MdDialogRef<LoginComponent>) {
   }
 }

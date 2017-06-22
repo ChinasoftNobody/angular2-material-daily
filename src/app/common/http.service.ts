@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {DialogRole, MdDialog} from '@angular/material';
+import {MdDialog} from '@angular/material';
 import {AppLoadingComponent} from './app.loading.component';
-import {CommonService} from "./common.service";
 /**
  * Created by Administrator on 2017/5/28.
  */
 @Injectable()
 export class HttpService {
-  constructor(private http: Http, public dialog: MdDialog, private commonService: CommonService) {
+  constructor(private http: Http, public dialog: MdDialog) {
   }
 
   private openLoadingDialog() {
@@ -19,18 +18,18 @@ export class HttpService {
     });
   }
 
-  post(url: string, body: any, resolve?: (value: any) => void) {
-    if (!this.commonService.getUser()) {
-      this.commonService.init();
-    } else {
-      this.openLoadingDialog();
-      this.http.post(url, body).subscribe(data => {
-        this.dialog.closeAll();
+  post(url: string, body: any, resolve?: (value: any) => void, failed?: (error: string) => void) {
+    this.openLoadingDialog();
+    this.http.post(url, body).subscribe(data => {
+      this.dialog.closeAll();
+      if (data.json().status === 'failed') {
+        failed(data.json().result);
+      }else {
         resolve(data.json().result);
-      }, error => {
-        console.error(error);
-        this.dialog.closeAll();
-      });
-    }
+      }
+    }, error => {
+      console.error(error);
+      this.dialog.closeAll();
+    });
   }
 }
