@@ -7,6 +7,16 @@ import {MdDialog} from '@angular/material';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  user: any = {
+    name: '',
+    password: ''
+  }
+  ;
+
+  login() {
+    console.log(this.user);
+  }
+
   closeDialog() {
     this.dialog.closeAll();
   }

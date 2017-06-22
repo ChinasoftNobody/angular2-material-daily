@@ -7,6 +7,22 @@
     </md-toolbar>
   </div>
   <div class="app-login-content">
-
+    <img md-card-image class="app-login-logo-img" src="../../../assets/imgs/login-logo.png">
+    <md-list>
+      <md-list-item>
+        <md-input-container class="app-login-input">
+          <input mdInput placeholder="Name" value="" [(ngModel)]="user.name">
+        </md-input-container>
+      </md-list-item>
+      <md-list-item>
+        <md-input-container class="app-login-input">
+          <input mdInput placeholder="Password" value="" [(ngModel)]="user.password">
+        </md-input-container>
+      </md-list-item>
+    </md-list>
+    <div class="login-btn">
+      <button md-button (click)="login()">Login</button>
+      <button md-button (click)="closeDialog()">Cancel</button>
+    </div>
   </div>
 </div>

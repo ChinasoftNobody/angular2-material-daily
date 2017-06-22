@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {CommonService} from "../common/common.service";
 
 @Component({
   moduleId: module.id,
@@ -13,10 +14,15 @@ export class IndexComponent implements OnInit {
     this.router.navigate([routerKey]);
   }
 
+  login() {
+    this.commonService.init();
+  }
+
   ngOnInit(): void {
 
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private commonService: CommonService) {
   }
 }

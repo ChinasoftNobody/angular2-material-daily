@@ -1,6 +1,9 @@
 .app-login-container{ background-color: #FFFFFF;width: 100%; height: 100%;}
-.app-login-header{ width: 100%;height: 100px;}
-.app-login-content{ width: 100%;height: 500px;}
+.app-login-header{ width: 100%;height: 64px;}
+.app-login-content{ width: 100%;height: 536px;}
 .example-icon {  padding: 0 14px;  }
 .example-icon:hover {  cursor: pointer;}
 .example-spacer {  flex: 1 1 auto;  }
+.app-login-input{width: 100%;}
+.app-login-logo-img{width: 800px; height: 336px;margin: 0;padding: 0}
+.login-btn{text-align: center;width: 100%;margin: 0;padding: 20px 0;}
