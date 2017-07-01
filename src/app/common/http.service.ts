@@ -24,7 +24,7 @@ export class HttpService {
       this.dialog.closeAll();
       if (data.json().status === 'failed') {
         failed(data.json().result);
-      }else {
+      } else {
         resolve(data.json().result);
       }
     }, error => {

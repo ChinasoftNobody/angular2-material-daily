@@ -1,4 +1,4 @@
-<div class="app-login-container">
+<div class="app-login-container" (keyup)="keyLogin($event)">
   <div class="app-login-header">
     <md-toolbar color="primary">
       <span>Login</span>
@@ -21,7 +21,7 @@
       </md-list-item>
     </md-list>
     <div class="login-btn">
-      <button md-button (click)="login()">Login</button>
+      <button md-button (click)="login()" class="mat-primary">Login</button>
       <button md-button (click)="closeDialog()">Cancel</button>
     </div>
   </div>

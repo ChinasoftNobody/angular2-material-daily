@@ -22,6 +22,7 @@ import {PaginationComponent} from './common/pagination/pagenation.component';
 import {CopyrightComponent} from './common/copyright/copyright.component';
 import {LoginComponent} from './common/login/login.component';
 import {CommonService} from './common/common.service';
+import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {CommonService} from './common/common.service';
     MdProgressSpinnerModule,
     MdListModule,
     AppRouterModule,
-    MdToolbarModule
+    MdToolbarModule,
+    CookieModule.forRoot()
   ],
   providers: [HttpService, ServerConfig, CommonService],
   bootstrap: [AppComponent, CopyrightComponent],

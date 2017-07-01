@@ -14,6 +14,15 @@ export class LoginComponent {
     password: ''
   };
 
+  keyLogin(event) {
+    const key = window.event ? event.keyCode : event.which;
+    if (key === 13) {
+      this.login();
+    } else if (key === 27) {
+      this.closeDialog();
+    }
+  }
+
   login() {
     this.http.post(this.serverConfig.getUrl('login'), this.user, value => this.dialogRef.close(value), error => {
       this.dialogRef.close('failed');
