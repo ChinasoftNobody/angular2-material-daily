@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 import {CommonService} from './common.service';
 /**
  * Created by Administrator on 2017/5/28.
@@ -11,23 +10,13 @@ import {CommonService} from './common.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  links = [{
-    title: 'Home',
-    url: 'index'
-  }];
   userName = 'Login Here';
 
-  constructor(private router: Router,
-              private commonService: CommonService) {
+  constructor(private commonService: CommonService) {
   }
 
   login() {
     this.commonService.init();
-  }
-
-  click(url) {
-    this.router.navigate(['/' + url]);
   }
 
   ngOnInit(): void {

@@ -9,12 +9,13 @@ export class CommonService {
   userObservable = this.userSubject.asObservable();
 
   setUser(user: any) {
-    this._cookieService.put('user', user);
+    this._cookieService.putObject('user', user);
     this.init();
   }
 
   init() {
-    if (!this.getUser()) {
+    const _user: any = this._cookieService.getObject('user');
+    if (!_user) {
       this.dialog.closeAll();
       const dialogRef = this.dialog.open(LoginComponent, {disableClose: true, width: '800px', height: '600px'});
       dialogRef.afterClosed().subscribe(result => {
@@ -27,11 +28,9 @@ export class CommonService {
           this.setUser(result);
         }
       });
+    } else {
+      this.userSubject.next(_user);
     }
-  }
-
-  getUser() {
-    return this._cookieService.get('user');
   }
 
   constructor(private dialog: MdDialog,

@@ -1,50 +1,19 @@
-<app-header></app-header>
 <div class="schedule-container">
-  <md-tab-group>
-    <md-tab label="Schedule List">
-      <md-grid-list cols="1" rowHeight="48px" gutterSize="5">
-        <md-grid-tile *ngFor="let schedule of scheduleList.content">
-          <md-nav-list style="width: 100%;padding: 0;">
-            <md-list-item>
-              <md-grid-list cols="3" rowHeight="48px" gutterSize="1" style="width: 100%">
-                <md-grid-tile>{{schedule.id}}</md-grid-tile>
-                <md-grid-tile>{{schedule.id}}</md-grid-tile>
-                <md-grid-tile>{{schedule.id}}</md-grid-tile>
-              </md-grid-list>
-            </md-list-item>
-          </md-nav-list>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-tab>
-    <md-tab label="Calendar">
-      <md-grid-list cols="7" rowHeight="50px" gutterSize="5">
-        <md-grid-tile
-          *ngFor="let t of title"
-          [colspan]="1"
-          [rowspan]="1"
-          [style.background]="'lightblue'">
-          <h3>周{{t}}</h3>
-        </md-grid-tile>
-      </md-grid-list>
-      <md-grid-list cols="7" rowHeight="1:1" gutterSize="5">
-        <md-grid-tile
-          *ngFor="let tile of tiles"
-          [colspan]="tile.cols"
-          [rowspan]="tile.rows"
-          [style.background]="tile.color">
-
-          <md-card class="example-card">
-            <md-card-header>
-              <md-card-title>{{tile.text}}</md-card-title>
-              <md-card-subtitle>Dog Breed</md-card-subtitle>
-            </md-card-header>
-            <md-card-content>
-              <p>{{tile.text}}</p>
-            </md-card-content>
-          </md-card>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-tab>
-  </md-tab-group>
+  <md-toolbar class="schedule-header">我的待办</md-toolbar>
+  <md-list>
+    <h3 md-subheader>Folders</h3>
+    <md-list-item *ngFor="let folder of folders">
+      <md-icon md-list-icon>folder</md-icon>
+      <h4 md-line>{{folder.name}}</h4>
+      <p md-line> {{folder.updated | date}} </p>
+    </md-list-item>
+    <md-divider></md-divider>
+    <h3 md-subheader>Notes</h3>
+    <md-list-item *ngFor="let note of notes">
+      <md-icon md-list-icon>note</md-icon>
+      <h4 md-line>{{note.name}}</h4>
+      <p md-line> {{note.updated | date}} </p>
+    </md-list-item>
+  </md-list>
 </div>
 

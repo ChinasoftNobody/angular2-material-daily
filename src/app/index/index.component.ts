@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {CommonService} from '../common/common.service';
 
 @Component({
   moduleId: module.id,
@@ -9,15 +8,12 @@ import {CommonService} from '../common/common.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent  {
-
-
   cardOnClick(routerKey: any) {
     this.router.navigate([routerKey]);
   }
 
 
 
-  constructor(private router: Router,
-              private commonService: CommonService) {
+  constructor(private router: Router) {
   }
 }

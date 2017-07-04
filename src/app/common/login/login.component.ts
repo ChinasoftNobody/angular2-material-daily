@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import {MdDialogRef} from '@angular/material';
 import {ServerConfig} from '../../config/server.config';
 import {HttpService} from '../http.service';
 @Component({
@@ -33,8 +33,7 @@ export class LoginComponent {
     this.dialogRef.close('close');
   }
 
-  constructor(private dialog: MdDialog,
-              private http: HttpService,
+  constructor(private http: HttpService,
               private serverConfig: ServerConfig,
               public dialogRef: MdDialogRef<LoginComponent>) {
   }
