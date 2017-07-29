@@ -6,7 +6,7 @@ import {
   MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule, MdGridListModule, MdIconModule,
   MdInputModule,
   MdSidenavModule, MdTabsModule, MdProgressSpinnerModule, MdListModule, MdListDivider, MdToolbar, MdToolbarModule,
-  MdMenuModule, MdTableModule
+  MdMenuModule, MdTableModule, MdPaginatorModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -44,6 +44,7 @@ import {DeveloperComponent} from './developer/developer.component';
     MdToolbarModule,
     MdTableModule,
     MdMenuModule,
+    MdPaginatorModule,
     CookieModule.forRoot()
   ],
   providers: [HttpService, ServerConfig, CommonService],

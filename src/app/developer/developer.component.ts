@@ -1,4 +1,5 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
+import {PageEvent} from '@angular/material';
 /**
  * Created by Administrator on 2017/7/22.
  */
@@ -9,12 +10,16 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./developer.component.css'],
   providers: []
 })
-export class DeveloperComponent implements OnInit {
+export class DeveloperComponent {
 
   displayedColumns = ['userId', 'userName', 'progress', 'color'];
   dataSource: any | null = [{id: '1', name: '1'}];
 
-  ngOnInit() {
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions = [5, 10, 25, 100];
+  change(pageEvent: PageEvent) {
+    debugger;
   }
 
 }
