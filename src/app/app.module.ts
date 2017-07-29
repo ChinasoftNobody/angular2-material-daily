@@ -5,7 +5,8 @@ import {HttpModule} from '@angular/http';
 import {
   MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule, MdGridListModule, MdIconModule,
   MdInputModule,
-  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule, MdListModule, MdListDivider, MdToolbar, MdToolbarModule
+  MdSidenavModule, MdTabsModule, MdProgressSpinnerModule, MdListModule, MdListDivider, MdToolbar, MdToolbarModule,
+  MdMenuModule, MdTableModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -22,12 +23,13 @@ import {PaginationComponent} from './common/pagination/pagenation.component';
 import {CopyrightComponent} from './common/copyright/copyright.component';
 import {LoginComponent} from './common/login/login.component';
 import {CommonService} from './common/common.service';
-import { CookieModule } from 'ngx-cookie';
+import {CookieModule} from 'ngx-cookie';
+import {DeveloperComponent} from './developer/developer.component';
 
 @NgModule({
   declarations: [
     AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent, CopyrightComponent,
-    LoginComponent
+    LoginComponent, DeveloperComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, MdButtonModule, MdSidenavModule, MdInputModule, MdDatepickerModule, MdCheckboxModule,
@@ -40,6 +42,8 @@ import { CookieModule } from 'ngx-cookie';
     MdListModule,
     AppRouterModule,
     MdToolbarModule,
+    MdTableModule,
+    MdMenuModule,
     CookieModule.forRoot()
   ],
   providers: [HttpService, ServerConfig, CommonService],

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 /**
  * Created by Administrator on 2017/7/22.
  */
@@ -9,5 +9,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./developer.component.css'],
   providers: []
 })
-export class DeveloperComponent {
+export class DeveloperComponent implements OnInit {
+
+  displayedColumns = ['userId', 'userName', 'progress', 'color'];
+  dataSource: any | null = [{id: '1', name: '1'}];
+
+  ngOnInit() {
+  }
+
 }
