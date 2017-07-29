@@ -6,40 +6,37 @@
         <md-input-container class="search">
           <input mdInput placeholder="Keywords" value="">
         </md-input-container>
-        <table class="table">
-          <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Url</th>
-            <th>UrlType</th>
-            <th>Description</th>
-            <th>Operate</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="listData">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Url</th>
+              <th>UrlType</th>
+              <th>Description</th>
+              <th>Operate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of pageInfo.content;let idx = index">
+              <td>{{idx+1}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.url}}</td>
+              <td>{{item.urlType}}</td>
+              <td>{{item.description}}</td>
+              <td>
+                <button md-button class="mat-primary">edit</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
         <!-- 分页 -->
-        <md-paginator [length]="length"
-                      [pageSize]="pageSize"
-                      [pageSizeOptions]="pageSizeOptions"
+        <md-paginator [length]="pageInfo.length"
+                      [pageSize]="pageInfo.pageSize"
+                      [pageSizeOptions]="pageInfo.pageSizeOptions"
                       (page)="change($event)">
         </md-paginator>
       </div>

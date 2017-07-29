@@ -23,6 +23,10 @@ export const ServerInfo = {
       name: 'login',
       type: 'post',
       url: '/daily/user/login'
+    }, {
+      name: 'repositoryList',
+      type: 'post',
+      url: '/daily/developer/repository/list'
     }
   ]
 };
