@@ -25,11 +25,12 @@ import {LoginComponent} from './common/login/login.component';
 import {CommonService} from './common/common.service';
 import {CookieModule} from 'ngx-cookie';
 import {DeveloperComponent} from './developer/developer.component';
+import {RepositoryUpdateComponent} from './developer/update/repository.update.component';
 
 @NgModule({
   declarations: [
     AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent, CopyrightComponent,
-    LoginComponent, DeveloperComponent
+    LoginComponent, DeveloperComponent, RepositoryUpdateComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, MdButtonModule, MdSidenavModule, MdInputModule, MdDatepickerModule, MdCheckboxModule,
@@ -49,7 +50,7 @@ import {DeveloperComponent} from './developer/developer.component';
   ],
   providers: [HttpService, ServerConfig, CommonService],
   bootstrap: [AppComponent, CopyrightComponent],
-  entryComponents: [AppLoadingComponent, LoginComponent]
+  entryComponents: [AppLoadingComponent, LoginComponent, RepositoryUpdateComponent]
 })
 export class AppModule {
 }

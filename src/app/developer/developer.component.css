@@ -5,7 +5,7 @@
 .listData{ min-height: 500px;}
 .table{ width: 100%;border: 0;border-collapse: collapse;overflow-y: scroll;}
 .table tr{ border-bottom:1px solid rgba(0,0,0,.12); height: 40px;}
-.table>tbody>tr:hover{ background-color: #3f51b5;}
+.table>tbody>tr:hover{ background-color: rgba(0,0,0,.12);}
 .table td{ text-align: center;}
 
 .mat-paginator{ background-color: transparent;}

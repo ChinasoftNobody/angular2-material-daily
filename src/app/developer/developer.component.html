@@ -2,15 +2,15 @@
   <md-tab-group>
     <md-tab label="Repository">
       <div class="repository-container">
-        <button md-button class="mat-primary mat-raised-button">Create</button>
+        <button md-button class="mat-primary mat-raised-button" (click)="update(true)">Create</button>
         <md-input-container class="search">
-          <input mdInput placeholder="Keywords" value="">
+          <input mdInput placeholder="Keywords" value="" [(ngModel)]="pageInfo.keywords" (keypress)="search($event)">
         </md-input-container>
         <div class="listData">
           <table class="table">
             <thead>
             <tr>
-              <th>Id</th>
+              <th>Index</th>
               <th>Name</th>
               <th>Url</th>
               <th>UrlType</th>
@@ -26,7 +26,7 @@
               <td>{{item.urlType}}</td>
               <td>{{item.description}}</td>
               <td>
-                <button md-button class="mat-primary">edit</button>
+                <button md-button class="mat-primary" (click)="update(false,item)">edit</button>
               </td>
             </tr>
             </tbody>
