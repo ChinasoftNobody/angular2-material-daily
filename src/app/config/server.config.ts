@@ -31,6 +31,10 @@ export const ServerInfo = {
       name: 'repositoryUpdate',
       type: 'post',
       url: '/daily/developer/repository/update'
+    }, {
+      name: 'repositoryDelete',
+      type: 'post',
+      url: '/daily/developer/repository/delete'
     }
   ]
 };

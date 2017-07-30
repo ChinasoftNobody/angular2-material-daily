@@ -55,6 +55,12 @@ export class DeveloperComponent implements OnInit {
     });
   }
 
+  delete(id: any) {
+    this.httpService.post(this.serverConfig.getUrl('repositoryDelete'), [id], data => {
+      this.listQuery();
+    }, failed => console.error(failed));
+  }
+
   ngOnInit(): void {
     this.listQuery();
   }

@@ -27,6 +27,7 @@
               <td>{{item.description}}</td>
               <td>
                 <button md-button class="mat-primary" (click)="update(false,item)">edit</button>
+                <button md-button (click)="delete(item.id)">delete</button>
               </td>
             </tr>
             </tbody>

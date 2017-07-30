@@ -1,5 +1,5 @@
 .developer-container{ margin: 0 5%;min-height: 600px;padding: 40px 0 0 0;}
-.repository-container{ padding-top: 40px;}
+.repository-container{ padding: 40px 10px;background-color: #FFFFFF;}
 .search{ width: 100%;}
 
 .listData{ min-height: 500px;}
