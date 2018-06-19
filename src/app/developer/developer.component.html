@@ -1,0 +1,47 @@
+<div class="developer-container">
+  <md-tab-group>
+    <md-tab label="Repository">
+      <div class="repository-container">
+        <button md-button class="mat-primary mat-raised-button" (click)="update(true)">Create</button>
+        <md-input-container class="search">
+          <input mdInput placeholder="Keywords" value="" [(ngModel)]="pageInfo.keywords" (keypress)="search($event)">
+        </md-input-container>
+        <div class="listData">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Index</th>
+              <th>Name</th>
+              <th>Url</th>
+              <th>UrlType</th>
+              <th>Description</th>
+              <th>Operate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of pageInfo.content;let idx = index">
+              <td>{{idx+1}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.url}}</td>
+              <td>{{item.urlType}}</td>
+              <td>{{item.description}}</td>
+              <td>
+                <button md-button class="mat-primary" (click)="update(false,item)">edit</button>
+                <button md-button (click)="delete(item.id)">delete</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 分页 -->
+        <md-paginator [length]="pageInfo.length"
+                      [pageSize]="pageInfo.pageSize"
+                      [pageSizeOptions]="pageInfo.pageSizeOptions"
+                      (page)="change($event)">
+        </md-paginator>
+      </div>
+    </md-tab>
+    <md-tab label="AssemblyLine">Content 2</md-tab>
+  </md-tab-group>
+</div>
