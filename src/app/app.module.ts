@@ -18,19 +18,18 @@ import {ScheduleComponent} from './schedule/schedule.component';
 import {HeaderComponent} from './common/header.component';
 import {AppLoadingComponent} from './common/app.loading.component';
 import {HttpService} from './common/http.service';
-import {ServerConfig} from './config/server.config';
+import {DailyServer} from './config/server.config';
 import {PaginationComponent} from './common/pagination/pagenation.component';
 import {CopyrightComponent} from './common/copyright/copyright.component';
 import {LoginComponent} from './common/login/login.component';
 import {CommonService} from './common/common.service';
 import {CookieModule} from 'ngx-cookie';
-import {DeveloperComponent} from './developer/developer.component';
-import {RepositoryUpdateComponent} from './developer/update/repository.update.component';
+import {VideoComponent} from './video/video.component';
 
 @NgModule({
   declarations: [
     AppComponent, IndexComponent, ScheduleComponent, HeaderComponent, AppLoadingComponent, PaginationComponent, CopyrightComponent,
-    LoginComponent, DeveloperComponent, RepositoryUpdateComponent
+    LoginComponent,  VideoComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, MdButtonModule, MdSidenavModule, MdInputModule, MdDatepickerModule, MdCheckboxModule,
@@ -48,9 +47,9 @@ import {RepositoryUpdateComponent} from './developer/update/repository.update.co
     MdPaginatorModule,
     CookieModule.forRoot()
   ],
-  providers: [HttpService, ServerConfig, CommonService],
+  providers: [HttpService, DailyServer, CommonService],
   bootstrap: [AppComponent, CopyrightComponent],
-  entryComponents: [AppLoadingComponent, LoginComponent, RepositoryUpdateComponent]
+  entryComponents: [AppLoadingComponent, LoginComponent]
 })
 export class AppModule {
 }

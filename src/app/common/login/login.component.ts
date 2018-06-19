@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {MdDialogRef} from '@angular/material';
-import {ServerConfig} from '../../config/server.config';
+import {DailyServer} from '../../config/server.config';
 import {HttpService} from '../http.service';
 @Component({
   moduleId: module.id,
@@ -34,7 +34,7 @@ export class LoginComponent {
   }
 
   constructor(private http: HttpService,
-              private serverConfig: ServerConfig,
+              private serverConfig: DailyServer,
               public dialogRef: MdDialogRef<LoginComponent>) {
   }
 }

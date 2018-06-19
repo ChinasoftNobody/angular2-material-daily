@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class IndexComponent  {
   cardOnClick(routerKey: any) {
-    this.router.navigate([routerKey]);
+    this.router.navigate([routerKey]).then();
   }
 
 

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from '../common/http.service';
-import {ServerConfig} from '../config/server.config';
+import {DailyServer} from '../config/server.config';
 
 @Component({
   moduleId: module.id,
@@ -38,6 +38,6 @@ export class ScheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private http: HttpService, private server: ServerConfig) {
+  constructor(private http: HttpService, private server: DailyServer) {
   }
 }

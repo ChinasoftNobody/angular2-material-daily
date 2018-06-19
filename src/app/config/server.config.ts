@@ -1,43 +1,22 @@
 import {Injectable} from '@angular/core';
+import {ServerInfo} from './daily.server.info';
+import {VideoServerInfo} from './video.server.info';
 /**
  * Created by Administrator on 2017/5/28.
  */
 
-export const ServerInfo = {
-  host: 'localhost:8080',
-  protocol: 'http',
-  interfaces: [
-    {
-      name: 'index',
-      type: 'post',
-      url: '/daily/module/query'
-    }, {
-      name: 'calendar',
-      type: 'post',
-      url: '/daily/schedule/calendar'
-    }, {
-      name: 'schedule_list',
-      type: 'post',
-      url: '/daily/schedule/query'
-    }, {
-      name: 'login',
-      type: 'post',
-      url: '/daily/user/login'
-    }, {
-      name: 'repositoryList',
-      type: 'post',
-      url: '/daily/developer/repository/list'
-    }, {
-      name: 'repositoryUpdate',
-      type: 'post',
-      url: '/daily/developer/repository/update'
-    }
-  ]
-};
-
 @Injectable()
-export class ServerConfig {
+export class DailyServer {
   getUrl(interfaceName: any) {
     return ServerInfo.protocol + '://' + ServerInfo.host + ServerInfo.interfaces.find((value, index) => interfaceName === value.name).url;
   }
 }
+
+@Injectable()
+export class VideoServer {
+  getUrl(interfaceName: any) {
+    return VideoServerInfo.protocol + '://' + VideoServerInfo.host
+      + VideoServerInfo.interfaces.find((value, index) => interfaceName === value.name).url;
+  }
+}
+
