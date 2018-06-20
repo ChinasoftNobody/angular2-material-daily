@@ -11,7 +11,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  userName = 'Login Here';
+  userName = 'NA';
+  logged = false;
 
   constructor(private commonService: CommonService,
               private router: Router) {
@@ -21,11 +22,22 @@ export class HeaderComponent implements OnInit {
     this.commonService.init();
   }
 
+  logout() {
+    this.commonService.logout();
+  }
+
   home() {
     this.router.navigate(['/']).then();
   }
 
   ngOnInit(): void {
-    this.commonService.userObservable.subscribe(user => this.userName = user.name);
+    this.commonService.userNameObservable.subscribe(userName => {
+      this.userName = userName;
+      if (userName !== '') {
+        this.logged = true;
+      }else {
+        this.logged = false;
+      }
+    });
   }
 }
